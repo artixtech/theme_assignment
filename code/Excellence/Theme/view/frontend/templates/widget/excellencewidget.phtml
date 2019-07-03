@@ -5,17 +5,12 @@
   <div><img  src="<?php echo $this->getViewFileUrl("images/main-image.png");?> " /></div>
 </div>
 
-
 <script>
    require([
        'jquery',
        'owlcarousel'
    ], function ($) {
-       //'use strict';
-       //jQuery.noConflict();
        $(".main-page-slider").owlCarousel({
-           //nav: true, // Show next and prev buttons
-           //navText:["previous","next"], //show prev next
            loop: true,
            dots:false,
            autoplay: true, //Set AutoPlay
