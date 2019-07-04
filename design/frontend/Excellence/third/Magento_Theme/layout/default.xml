@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+    <page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+        <body>
+            <move element="top.search" destination="header.panel"/>
+            <move element="authorization-link-login" destination="header-wrapper" before="-"/>
+            <move element="register-link" destination="header-wrapper" before="-"/>
+            <move element="wishlist-link" destination="header-wrapper" before="-"/>
+            <move element="account-link" destination="header-wrapper" after="-"/>
+            <move element="welcome" destination="header-wrapper"/>
+            <move element="welcome.message" destination="header.panel" before="-"/>
+            <move element="minicart" destination="navigation.sections" after="catalog.topnav"/>
+            <block class="Magento\Framework\View\Element\Template" name="main-header" template="Magento_Theme::header.phtml" />
+            <referenceBlock name="header.links">
+                <block class="Magento\Framework\View\Element\Html\Link" name="wishlist-link" after="register-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="false">My Wishlist</argument>
+                    <argument name="path" xsi:type="string" translate="false">wishlist</argument>
+                </arguments>
+                </block> 
+            </referenceBlock>
+            <referenceContainer name="header.panel">
+                <container name="main-header" label="" htmlTag="div" htmlClass="main-header" />
+            </referenceContainer>
+            <block class="Magento\Customer\Block\Account\RegisterLink" name="register-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Account</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Customer\Block\Account\RegisterLink" name="authorization-link-login">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Log In</argument>
+                </arguments>
+            </block>
+            <referenceContainer name="header.panel">
+                <block class="Magento\Framework\View\Element\Template" name="config.header.notification" before="-" template="Magento_Theme::header.phtml" />
+            </referenceContainer>
+        </body>
+</page>
