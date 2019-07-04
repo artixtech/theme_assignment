@@ -4,7 +4,7 @@
 	use Magento\Framework\View\Element\Template;
 	use Magento\Widget\Block\BlockInterface;
 	
-		class Excellencewidget extends Template implements BlockInterface
+		class Themewidget extends Template implements BlockInterface
 		{
-		    protected $_template = "widget/excellencewidget.phtml";
+		    protected $_template = "widget/themewidget.phtml";
 		}
